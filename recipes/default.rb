@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-package "git-buildpackage"
+node['git-buildpackage']['packages'].each { |pkg| package pkg }
