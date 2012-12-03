@@ -18,3 +18,12 @@
 #
 
 node['git-buildpackage']['packages'].each { |pkg| package pkg }
+
+template "/etc/git-buildpackage/gbp.conf" do
+  source "gbp.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+  variables(:config => node['git-buildpackage']['config'])
+end
