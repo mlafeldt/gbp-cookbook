@@ -23,7 +23,7 @@ Attributes
 Recipes
 =======
 
-## git::default
+## git-buildpackage::default
 
 Installs and configures git-buildpackage
 
