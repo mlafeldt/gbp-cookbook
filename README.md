@@ -8,8 +8,8 @@ Requirements
 
 ## Platform:
 
-* ubuntu
-* debian
+* Ubuntu
+* Debian
 
 ## Cookbooks:
 
