@@ -1,7 +1,7 @@
 Description
 ===========
 
-Installs git-buildpackage
+Installs and configures git-buildpackage
 
 Requirements
 ============
@@ -25,7 +25,7 @@ Recipes
 
 ## git::default
 
-Installs git-buildpackage
+Installs and configures git-buildpackage
 
 
 License and Author
