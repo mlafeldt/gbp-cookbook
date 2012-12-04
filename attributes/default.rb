@@ -1,5 +1,7 @@
 default['git-buildpackage']['install_packages'] = %w(git-buildpackage)
 
+default['git-buildpackage']['config_file'] = '/etc/git-buildpackage/gbp.conf'
+
 # These attributes map 1:1 to the configuration file of git-buildpackage. You can
 # define default global options as well as command-specific options:
 #

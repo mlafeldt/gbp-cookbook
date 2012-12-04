@@ -19,7 +19,7 @@
 
 node['git-buildpackage']['install_packages'].each { |pkg| package pkg }
 
-template "/etc/git-buildpackage/gbp.conf" do
+template node['git-buildpackage']['config_file'] do
   source "gbp.conf.erb"
   owner "root"
   group "root"
