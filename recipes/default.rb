@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-node['git-buildpackage']['packages'].each { |pkg| package pkg }
+node['git-buildpackage']['install_packages'].each { |pkg| package pkg }
 
 template "/etc/git-buildpackage/gbp.conf" do
   source "gbp.conf.erb"
