@@ -12,7 +12,7 @@ describe 'The recipe git-buildpackage::default' do
     it 'should create the git-buildpackage config file with right content' do
       content = <<'EOF'
 [DEFAULT]
-builder = debuild -i\.git -I.git
+builder = debuild -i\.git -I.git -uc -us
 cleaner = debuild clean
 upstream-branch = upstream
 upstream-tag = upstream/%(version)s

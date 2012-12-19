@@ -35,7 +35,7 @@ default['git-buildpackage']['config_file'] = '/etc/git-buildpackage/gbp.conf'
 #
 # will set the "ignore-branch" option to "False" for the "DEFAULT" section.
 #
-default['git-buildpackage']['config']['DEFAULT']['builder'] = 'debuild -i\.git -I.git'
+default['git-buildpackage']['config']['DEFAULT']['builder'] = 'debuild -i\.git -I.git -uc -us'
 default['git-buildpackage']['config']['DEFAULT']['cleaner'] = 'debuild clean'
 default['git-buildpackage']['config']['DEFAULT']['upstream-branch'] = 'upstream'
 default['git-buildpackage']['config']['DEFAULT']['upstream-tag'] = 'upstream/%(version)s'
