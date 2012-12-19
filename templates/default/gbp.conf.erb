@@ -1,8 +1,8 @@
 # Configuration file for git-buildpackage and friends
 
-<% @config.sort.each do |section, options| %>
+<% @config.each do |section, options| %>
 [<%= section %>]
-<% options.sort.each do |key, value| %>
+<% options.each do |key, value| %>
 <%= key %> = <%= value %>
 <% end %>
 
