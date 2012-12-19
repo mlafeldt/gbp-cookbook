@@ -13,12 +13,16 @@ Requirements
 
 ## Cookbooks:
 
-*No dependencies defined*
+No dependencies
 
 Attributes
 ==========
 
-*No attributes defined*
+- `node['git-buildpackage']['install_packages']` - packages to install
+- `node['git-buildpackage']['config_file']` - path to configuration file
+- `node['git-buildpackage']['config']` - hash holding configuration settings
+
+See file `attributes/default.rb` for more information.
 
 Recipes
 =======
