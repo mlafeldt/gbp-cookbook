@@ -1,3 +1,13 @@
+1.0.2 (Jan 15 2013)
+-------------------
+
+* Define config hash as JSON data in Vagrantfile. No longer define default config
+  attributes in cookbook (`node['git-buildpackage']['config']`).
+* Update gems.
+* Update copyright year.
+* Add this CHANGELOG file.
+
+
 1.0.1 (Dec 20 2012)
 -------------------
 
