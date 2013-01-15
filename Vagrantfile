@@ -12,7 +12,28 @@ Vagrant::Config.run do |config|
       "recipe[apt::default]",
       "recipe[git-buildpackage::default]"
     ]
-    chef.json = {}
+
+    chef.json = {
+      "git-buildpackage" => {
+        "config" => {
+          "DEFAULT" => {
+            "builder"         => "debuild -i\\.git -I.git -uc -us",
+            "cleaner"         => "debuild clean",
+            "upstream-branch" => "upstream",
+            "upstream-tag"    => "upstream/%(version)s",
+            "debian-branch"   => "master",
+            "debian-tag"      => "debian/%(version)s",
+            "ignore-branch"   => "False"
+          },
+          "git-buildpackage" => {
+            "prebuild"  => "",
+            "postbuild" => "",
+            "posttag"   => ""
+          }
+        }
+      }
+    }
+
     chef.log_level = :debug
   end
 end

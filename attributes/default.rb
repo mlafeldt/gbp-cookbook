@@ -17,10 +17,14 @@
 # limitations under the License.
 #
 
+# List of packages to install
 default['git-buildpackage']['install_packages'] = %w(git-buildpackage)
 
+# Path to configuration file
 default['git-buildpackage']['config_file'] = '/etc/git-buildpackage/gbp.conf'
 
+# Hash of configuration settings
+#
 # These attributes map 1:1 to the configuration file of git-buildpackage. You can
 # define default global options as well as command-specific options:
 #
@@ -35,14 +39,4 @@ default['git-buildpackage']['config_file'] = '/etc/git-buildpackage/gbp.conf'
 #
 # will set the "ignore-branch" option to "False" for the "DEFAULT" section.
 #
-default['git-buildpackage']['config']['DEFAULT']['builder'] = 'debuild -i\.git -I.git -uc -us'
-default['git-buildpackage']['config']['DEFAULT']['cleaner'] = 'debuild clean'
-default['git-buildpackage']['config']['DEFAULT']['upstream-branch'] = 'upstream'
-default['git-buildpackage']['config']['DEFAULT']['upstream-tag'] = 'upstream/%(version)s'
-default['git-buildpackage']['config']['DEFAULT']['debian-branch'] = 'master'
-default['git-buildpackage']['config']['DEFAULT']['debian-tag'] = 'debian/%(version)s'
-default['git-buildpackage']['config']['DEFAULT']['ignore-branch'] = 'False'
-
-default['git-buildpackage']['config']['git-buildpackage']['prebuild'] = nil
-default['git-buildpackage']['config']['git-buildpackage']['postbuild'] = nil
-default['git-buildpackage']['config']['git-buildpackage']['posttag'] = nil
+default['git-buildpackage']['config'] = Hash.new
