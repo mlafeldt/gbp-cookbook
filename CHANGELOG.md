@@ -1,3 +1,11 @@
+1.0.3 (Jan 17 2013)
+-------------------
+
+* Install pre-build, post-build, and post-tag build hooks. New attributes are
+  `node['git-buildpackage']['install_hooks']` and
+  `node['git-buildpackage']['hooks_dir']`.
+
+
 1.0.2 (Jan 15 2013)
 -------------------
 
