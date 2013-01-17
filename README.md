@@ -18,9 +18,11 @@ No dependencies
 Attributes
 ==========
 
-- `node['git-buildpackage']['install_packages']` - packages to install
-- `node['git-buildpackage']['config_file']` - path to configuration file
-- `node['git-buildpackage']['config']` - hash holding configuration settings
+- `node['git-buildpackage']['install_packages']` - List of packages to install
+- `node['git-buildpackage']['config_file']` - Path to configuration file
+- `node['git-buildpackage']['install_hooks']` - List of build hooks to install
+- `node['git-buildpackage']['hooks_dir']` - Path to directory with hook scripts
+- `node['git-buildpackage']['config']` - Hash of configuration settings
 
 See file `attributes/default.rb` for more information.
 
