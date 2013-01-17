@@ -34,4 +34,15 @@ EOF
     chef_run.should create_file_with_content \
       chef_run.node['git-buildpackage']['config_file'], content
   end
+
+  it 'should create the hooks directory' do
+    chef_run.should create_directory chef_run.node['git-buildpackage']['hooks_dir']
+  end
+
+  %w(prebuild postbuild posttag).each do |hook|
+    it "should install the #{hook} hook script" do
+      script = ::File.join(chef_run.node['git-buildpackage']['hooks_dir'], hook)
+      chef_run.should create_file script
+    end
+  end
 end
