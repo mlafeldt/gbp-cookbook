@@ -24,11 +24,6 @@ Vagrant::Config.run do |config|
             "debian-branch"   => "master",
             "debian-tag"      => "debian/%(version)s",
             "ignore-branch"   => "False"
-          },
-          "git-buildpackage" => {
-            "prebuild"  => "",
-            "postbuild" => "",
-            "posttag"   => ""
           }
         }
       }

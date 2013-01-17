@@ -20,10 +20,28 @@
 node['git-buildpackage']['install_packages'].each { |pkg| package pkg }
 
 template node['git-buildpackage']['config_file'] do
-  source "gbp.conf.erb"
-  owner "root"
-  group "root"
-  mode "0644"
+  source 'gbp.conf.erb'
+  owner  'root'
+  group  'root'
+  mode   '0644'
   action :create
   variables(:config => node['git-buildpackage']['config'])
+end
+
+directory node['git-buildpackage']['hooks_dir'] do
+  owner     'root'
+  group     'root'
+  mode      '0755'
+  recursive true
+  action    :create
+end
+
+node['git-buildpackage']['install_hooks'].each do |hook|
+  template ::File.join(node['git-buildpackage']['hooks_dir'], hook) do
+    source "#{hook}-hook.erb"
+    owner  'root'
+    group  'root'
+    mode   '0755'
+    action :create
+  end
 end

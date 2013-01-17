@@ -23,10 +23,17 @@ default['git-buildpackage']['install_packages'] = %w(git-buildpackage)
 # Path to configuration file
 default['git-buildpackage']['config_file'] = '/etc/git-buildpackage/gbp.conf'
 
+# List of build hooks to install
+default['git-buildpackage']['install_hooks'] = %w(prebuild postbuild posttag)
+
+# Path to directory with hook scripts
+default['git-buildpackage']['hooks_dir'] = '/usr/share/git-buildpackage/hooks'
+
 # Hash of configuration settings
 #
-# These attributes map 1:1 to the configuration file of git-buildpackage. You can
-# define default global options as well as command-specific options:
+# The attributes in node['git-buildpackage']['config'] map 1:1 to the config file
+# of git-buildpackage. You can define default global options as well as command-
+# specific options:
 #
 #   node['git-buildpackage']['config']['DEFAULT'] - default global options
 #   node['git-buildpackage']['config']['git-buildpackage'] - options specific to git-buildpackage
@@ -40,3 +47,9 @@ default['git-buildpackage']['config_file'] = '/etc/git-buildpackage/gbp.conf'
 # will set the "ignore-branch" option to "False" for the "DEFAULT" section.
 #
 default['git-buildpackage']['config'] = Hash.new
+
+# Enable build hooks in configuration
+node['git-buildpackage']['install_hooks'].each do |hook|
+  default['git-buildpackage']['config']['git-buildpackage'][hook] =
+    ::File.join(node['git-buildpackage']['hooks_dir'], hook)
+end
