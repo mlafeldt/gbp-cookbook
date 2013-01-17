@@ -1,0 +1,19 @@
+#!/bin/sh
+# git-buildpackage post-build hook
+
+set -e
+
+say() { echo "[postbuild] $@"; }
+
+build_dir=$GBP_BUILD_DIR
+changes_file=$GBP_CHANGES_FILE
+deb_file=$(echo "$changes_file" | sed -e 's/\.changes$/.deb/')
+
+say "Build directory: $build_dir"
+say "Changes file...: $changes_file"
+say "Debian package.: $deb_file"
+
+test -e "$deb_file" || {
+    echo >&2 "error: package file $deb_file does not exist"
+    exit 1
+}

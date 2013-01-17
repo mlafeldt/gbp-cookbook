@@ -1,0 +1,14 @@
+#!/bin/sh
+# git-buildpackage post-tag hook
+
+set -e
+
+say() { echo "[posttag] $@"; }
+
+tag=$GBP_TAG
+branch=$GBP_BRANCH
+sha1=$GBP_SHA1
+
+say "Tag name: $tag"
+say "Branch..: $branch"
+say "SHA1....: $sha1"

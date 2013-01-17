@@ -1,0 +1,12 @@
+#!/bin/sh
+# git-buildpackage pre-build hook
+
+set -e
+
+say() { echo "[prebuild] $@"; }
+
+git_dir=$GBP_GIT_DIR
+build_dir=$GBP_BUILD_DIR
+
+say "Git directory..: $git_dir"
+say "Build directory: $build_dir"
