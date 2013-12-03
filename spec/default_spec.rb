@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe "git-buildpackage::default" do
   let (:chef_run) do
-    chef_run = ChefSpec::Runner.new do |node|
+    ChefSpec::Runner.new do |node|
       node.set["git-buildpackage"] = {
         "config" => {
           "DEFAULT" => {
