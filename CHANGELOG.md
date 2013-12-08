@@ -1,3 +1,10 @@
+1.1.0 (Dec 8 2013)
+------------------
+
+* Use Test Kitchen for integration testing.
+* Update to ChefSpec v3.
+* Update README.
+
 1.0.5 (Jul 29 2013)
 -------------------
 
@@ -17,14 +24,12 @@ Take over changes from [skeleton cookbook](https://github.com/mlafeldt/skeleton-
   `COOKBOOKS_PATH` with `FIXTURES_PATH` which defaults to _fixtures_.
 * Let Travis run tests against Ruby 2.0.0.
 
-
 1.0.3 (Jan 17 2013)
 -------------------
 
 * Install pre-build, post-build, and post-tag build hooks. New attributes are
   `node['git-buildpackage']['install_hooks']` and
   `node['git-buildpackage']['hooks_dir']`.
-
 
 1.0.2 (Jan 15 2013)
 -------------------
@@ -35,13 +40,11 @@ Take over changes from [skeleton cookbook](https://github.com/mlafeldt/skeleton-
 * Update copyright year.
 * Add this CHANGELOG file.
 
-
 1.0.1 (Dec 20 2012)
 -------------------
 
 * Sort configuration entries so the content/checksum of `gbp.conf` stays the
   same as long as `node['git-buildpackage']['config']` hasn't changed.
-
 
 1.0.0 (Dec 19 2012)
 -------------------
