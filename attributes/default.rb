@@ -46,7 +46,7 @@ default['git-buildpackage']['hooks_dir'] = '/usr/share/git-buildpackage/hooks'
 #
 # will set the "ignore-branch" option to "False" for the "DEFAULT" section.
 #
-default['git-buildpackage']['config'] = Hash.new
+default['git-buildpackage']['config'] = {}
 
 # Enable build hooks in configuration
 node['git-buildpackage']['install_hooks'].each do |hook|
