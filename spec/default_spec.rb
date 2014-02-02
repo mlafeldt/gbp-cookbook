@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe "git-buildpackage::default" do
-  let (:chef_run) do
+  let(:chef_run) do
     ChefSpec::Runner.new do |node|
       node.set["git-buildpackage"] = {
         "config" => {
@@ -22,8 +22,8 @@ describe "git-buildpackage::default" do
   end
 
   it "should create the config file with the right content" do
-    chef_run.should render_file(chef_run.node["git-buildpackage"]["config_file"]).
-      with_content <<EOS
+    chef_run.should render_file(chef_run.node["git-buildpackage"]["config_file"])
+      .with_content <<EOS
 [DEFAULT]
 builder = pdebuild
 cleaner = fakeroot debian/rules clean
